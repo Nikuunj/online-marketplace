@@ -118,7 +118,7 @@ app.post('/admin', upload.single('file'), async (req, res) => {
 // Endpoint to fetch all products with image data
 app.get('/products', async (req, res) => {
   try {
-    const [rows] = await req.db.execute('SELECT id, name, price, details, company, image_data FROM items');
+    const [rows] = await req.db.execute('SELECT * FROM items');
     
     // Modify each product to include a base64 encoded image representation
     const productsWithImages = rows.map(product => ({
