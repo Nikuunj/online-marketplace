@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "name": "Basic-T-Shirt",
+      "category": "Tops",
+      "size": ["S", "M", "L", "XL"],
+      "color": "White",
+      "price": 19.99,
+      "stock": 50,
+      "image": "1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Skinny-Jeans",
+      "category": "Bottoms",
+      "size": ["S", "M", "L", "XL"],
+      "color": "Blue",
+      "price": 39.99,
+      "stock": 30,
+      "image": "2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Hoodie",
+      "category": "Outerwear",
+      "size": ["S", "M", "L", "XL"],
+      "color": "Black",
+      "price": 49.99,
+      "stock": 20,
+      "image": "3.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Floral-Dress",
+      "category": "Dresses",
+      "size": ["S", "M", "L"],
+      "color": "Red",
+      "price": 59.99,
+      "stock": 15,
+      "image": "4.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Running_Shoes",
+      "category": "Footwear",
+      "size": [6, 7, 8, 9, 10],
+      "color": "Gray",
+      "price": 79.99,
+      "stock": 25,
+      "image": "5.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Beanie",
+      "category": "Accessories",
+      "size": ["One Size"],
+      "color": "Green",
+      "price": 14.99,
+      "stock": 40,
+      "image": "6.jpeg"
+    },
+    {
+        "id": 7,
+        "name": "Beanie",
+        "category": "Accessories",
+        "size": ["One Size"],
+        "color": "Green",
+        "price": 14.99,
+        "stock": 40,
+        "image": "7.jpeg"
+      },
+      {
+        "id": 8,
+        "name": "Beanie",
+        "category": "Accessories",
+        "size": ["One Size"],
+        "color": "Green",
+        "price": 14.99,
+        "stock": 40,
+        "image": "8.jpeg"
+      }
+  ]
+  
