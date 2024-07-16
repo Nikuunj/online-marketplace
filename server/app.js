@@ -136,6 +136,27 @@ app.get('/products', async (req, res) => {
     res.status(500).json({ error: 'Error fetching products' });
   }
 });
+app.post('/productDelete', async (req, res) => {
+  const productId = req.query.id;
+
+  if (!productId) {
+    return res.status(400).send('Product ID is required');
+  }
+
+  try {
+    const [result] = await req.db.execute('DELETE FROM items WHERE id = ?', [productId]);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).send('Product not found');
+    }
+
+    res.send('Product deleted successfully');
+  } catch (error) {
+    console.error('Error deleting product:', error);
+    res.status(500).send('Server error');
+  }
+});
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
