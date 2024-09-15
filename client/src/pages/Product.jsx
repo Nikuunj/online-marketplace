@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ProductList from '../componets/ProductList';
+import ProductViewNormal from '../componets/ProductViewNormal';
+import Loading from '../componets/Loading';
 
 const Product = () => {
     const [products, setProducts] = useState([]);
@@ -9,7 +10,9 @@ const Product = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:3000/products');
+                const response = await fetch('https://online-market-backend-4n5q.onrender.com/products');
+                // const response = await fetch('http://localhost:3000/products');
+
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -20,7 +23,9 @@ const Product = () => {
                     image_url: `data:image/png;base64,${product.image}` // Adjust MIME type if necessary
                 }));
                 setProducts(productsWithImages);
-                setLoading(false);
+                setTimeout(() => {
+                    setLoading(false);
+                }, 700);
             } catch (error) {
                 console.error('Error fetching products:', error);
                 setError('Failed to fetch products. Please try again later.');
@@ -33,13 +38,15 @@ const Product = () => {
 
     return (
         <div>
-            <h1>Products</h1>
+            <p className='text-5xl text-center my-5'>Products</p>
             {loading ? (
-                <p>Loading...</p>
+                <div className='flex flex-start'>
+                <Loading/>
+                </div>
             ) : error ? (
                 <p>Error: {error}</p>
             ) : products ? (
-                <ProductList products={products}/>
+                <ProductViewNormal products={products}/>
             ) : null}
         </div>
     );
